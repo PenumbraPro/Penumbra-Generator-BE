@@ -1,8 +1,21 @@
 {
-  "name": "my_first_midway_project",
-  "version": "1.0.0",
-  "description": "{{description}}",
+  "name": "<%= appName %>",
+  "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=midway-server-my_first_midway_project --framework=midway --ts",
+    "stop": "egg-scripts stop --title=midway-server-my_first_midway_project",
+    "start_build": "npm run build && cross-env NODE_ENV=development midway-bin dev",
+    "clean": "midway-bin clean",
+    "dev": "cross-env NODE_ENV=local midway-bin dev --ts",
+    "debug": "cross-env NODE_ENV=local midway-bin debug --ts",
+    "test": "npm run lint && jest --forceExit",
+    "cov": "codecov -t a2187303-880d-4fbf-ad80-6358b6e1b726",
+    "lint": "tslint --fix -p tsconfig.json -t stylish",
+    "ci": "npm run cov",
+    "build": "midway-bin build -c",
+    "autod": "midway-bin autod"
+  },
   "dependencies": {
     "@types/chalk": "^2.2.0",
     "chalk": "^4.0.0",
@@ -33,22 +46,8 @@
   "engines": {
     "node": ">=10.16.0"
   },
-  "scripts": {
-    "start": "egg-scripts start --daemon --title=midway-server-my_first_midway_project --framework=midway --ts",
-    "stop": "egg-scripts stop --title=midway-server-my_first_midway_project",
-    "start_build": "npm run build && cross-env NODE_ENV=development midway-bin dev",
-    "clean": "midway-bin clean",
-    "dev": "cross-env NODE_ENV=local midway-bin dev --ts",
-    "debug": "cross-env NODE_ENV=local midway-bin debug --ts",
-    "test": "npm run lint && jest --forceExit",
-    "cov": "codecov -t a2187303-880d-4fbf-ad80-6358b6e1b726",
-    "lint": "tslint --fix -p tsconfig.json -t stylish",
-    "ci": "npm run cov",
-    "build": "midway-bin build -c",
-    "autod": "midway-bin autod"
-  },
   "ci": {
-    "version": "10"
+    "version": "12"
   },
   "midway-bin-clean": [
     ".vscode/.tsbuildinfo",
@@ -58,6 +57,6 @@
     "type": "git",
     "url": ""
   },
-  "author": "anonymous",
+  "author": "penumbra",
   "license": "MIT"
 }
