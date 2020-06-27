@@ -4,6 +4,7 @@ import Router from "@koa/router";
 import logger from "koa-logger";
 import { createConnection, useContainer } from "typeorm";
 import { Container } from "typedi";
+
 import { User } from "./entity/user";
 import cors from "./middleware/cors";
 import { log } from "./util";
@@ -30,23 +31,23 @@ app.use(bye.routes()).use(router.allowedMethods());
 
 app.use(router.routes()).use(router.allowedMethods());
 
-// (async () => {
-//   log("=== TypeORM Connecting ===");
+(async () => {
+  log("=== TypeORM Connecting ===");
 
-//   try {
-//     const connection = await createConnection();
+  try {
+    const connection = await createConnection();
 
-//     log("=== Database Connection Established ===");
+    log("=== Database Connection Established ===");
 
-//     await connection.manager.insert(User, {
-//       name: "芜湖!",
-//       age: 18,
-//       description: "纯nt",
-//     });
-//   } catch (error) {
-//     log(error, "red");
-//   }
-// })();
+    await connection.manager.insert(User, {
+      name: "芜湖!",
+      age: 18,
+      description: "纯nt",
+    });
+  } catch (error) {
+    log(error, "red");
+  }
+})();
 
 app.listen(3099, () => {
   log("Application Start On: http://localhost:3099");
