@@ -34,4 +34,9 @@ penumbra install generator-be
   - Travis + GitHub Actions
   - Jest + Codecov
 
-* [ ] 基于 `Apollo-Koa` + `TypeGraphQL` + `TypeORM`, 适用于 GraphQL API 的构建
+- [x] 基于 `Apollo-Koa` + `TypeGraphQL` + `TypeORM`, 适用于 GraphQL API 的构建
+
+  - Apollo-Server
+  - TypeORM + MySQL
+  - TypeDI
+  - Travis + GitHub Actions

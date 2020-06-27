@@ -18,7 +18,7 @@ class PeGenerator extends Generator {
       },
       {
         type: "list",
-        choices: ["Koa-Restful", "Midway-Restful"],
+        choices: ["Koa-Restful", "Midway-Restful","Apollo-GraphQL"],
         name: "template",
         message: "Which template this time?",
         default: "Koa-Restful",
