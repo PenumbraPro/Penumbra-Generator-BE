@@ -22,7 +22,7 @@ async function start() {
 
   app.listen(4000, () =>
     console.log(
-      chalk.green(`🍀Server ready at http://localhost:${4000}/graphql`)
+      chalk.green(`🍀 Server ready at http://localhost:${4000}/graphql`)
     )
   );
 }
